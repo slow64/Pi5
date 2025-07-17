@@ -4,7 +4,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-brightgreen.svg)  
 ![Next.js](https://img.shields.io/badge/Next.js-14+-black.svg)  
 ![MongoDB](https://img.shields.io/badge/MongoDB-6.0+-lightgreen.svg)   
-
+---
 Este projeto integra três serviços principais:
 - **Backend de Autenticação** (Node.js)
 - **Backend do Chatbot** (Python - FastAPI)
