@@ -1,12 +1,9 @@
 # Projeto Pi5  
-
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)  
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)  
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-brightgreen.svg)  
 ![Next.js](https://img.shields.io/badge/Next.js-14+-black.svg)  
-![MongoDB](https://img.shields.io/badge/MongoDB-6.0+-lightgreen.svg)  
-
----  
+![MongoDB](https://img.shields.io/badge/MongoDB-6.0+-lightgreen.svg)   
 
 Este projeto integra três serviços principais:
 - **Backend de Autenticação** (Node.js)
