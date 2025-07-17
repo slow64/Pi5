@@ -1,0 +1,73 @@
+<div class="menu_bar flex justify-between items-center">
+    <div class="nav-logo">
+        <img src="/logo-branca.png" alt="LogoFormat">
+    </div>
+
+    <ul class="flex space-x-4">
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="#">A Format <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown_menu">
+                <ul>
+                    <li>
+                        <a href="#">Serviços <i class="fas fa-caret-right"></i></a>
+                        <div class="dropdown_menu-1">
+                            <ul>
+                                <li><a href="#">Manutenção de Computadores</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Equipe</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+
+    <!-- Link de logout -->
+    <a id="logoutBtn" href="#" class="text-red-600 hover:text-red-800">
+        Desconectar
+    </a>
+</div>
+
+<script>
+    // Logout
+    document.getElementById("logoutBtn").addEventListener("click", (event) => {
+        event.preventDefault();
+
+        fetch("/api/user/logout", {
+            method: "POST",
+            credentials: "include"
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = "/";
+            } else {
+                alert("Nenhuma conta conectada");
+            }
+        });
+    });
+
+    fetch("/api/user/me", {
+        method: "GET",
+        credentials: "include"
+    })
+    .then(res => res.json())
+    .then(body => {
+        if (body.ok && body.user && body.user.role === "admin") {
+            const navList = document.querySelector(".menu_bar ul");
+            if (navList) {
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = "/admin";
+                a.textContent = "Admin";
+                li.appendChild(a);
+                navList.appendChild(li);
+            }
+        }
+    })
+    .catch(err => {
+        console.error("Erro ao buscar informações do usuário:", err);
+    });
+</script>

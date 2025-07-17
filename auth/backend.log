@@ -1,0 +1,8 @@
+nohup: ignoring input
+
+> auth@1.0.0 start
+> node server.js
+
+Servidor rodando em http://localhost:3000
+Pressione Ctrl+C para encerrar o servidor.
+Conectado a DB

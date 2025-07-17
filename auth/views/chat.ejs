@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/admin.css">
+    <link rel="stylesheet" href="/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" href="/LogoFormat.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Format Bot</title>
+</head>
+<body>
+    <%- include('./partials/navbar'); %>
+
+    <main class="conversation-viewer">
+        <header>
+            <h2>Histórico de Conversa</h2>
+        </header>
+        
+
+<div class="conversation-container">
+    <% if (conversation.length > 0) { %>
+        <ul class="chatbox">
+            <% conversation.forEach(message => { %>
+                <li class="chat <%= message.sent ? 'outgoing' : 'incoming' %>">
+                    <% if (!message.sent) { %>
+                        <span class="material-symbols-outlined">smart_toy</span>
+                    <% } %>
+                    <div class="chat-message <%= message.sent ? 'outgoing' : 'incoming' %>">
+                        <%= message.content %>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p class="no-conversation-message">USUÁRIO NÃO INTERAGIU COM CHATBOT</p>
+    <% } %>
+</div>
+
+    </main>
+    
+
+    </div>
+  </div>
+    <%- include('./partials/footer'); %>
+</body>
+</html>

@@ -1,0 +1,483 @@
+:root {
+    --color-primary: #82049b;
+    --color-white: #e9e9e9;
+    --color-black: #141d28;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%; /* Garante altura mínima para empurrar o footer */
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex; /* Usa flexbox para organizar o layout */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    justify-content: space-between; /* Garante o espaço entre o conteúdo e o footer */
+
+    height: 100%;
+}
+
+.menu_bar {
+    background-color: rgb(0, 0, 0);
+    min-height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.nav-logo img {
+    width: 150px;
+    height: auto;
+}
+
+.menu_bar ul {
+    list-style: none;
+    display: flex;
+    flex-grow: 1; /* Faz o menu ocupar o espaço restante */
+    justify-content: flex-start;
+    margin-left: 90px;
+}
+
+.menu_bar ul li {
+    padding: 10px 30px;
+    position: relative;
+}
+
+.menu_bar ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.menu_bar ul li a:hover {
+    color: var(--color-primary);
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 10;
+}
+
+.menu_bar ul li:hover > .dropdown_menu {
+    display: block;
+}
+
+.menu_bar ul li:hover .dropdown_menu ul {
+    display: block;
+    margin: 10px;
+}
+
+.dropdown_menu ul li:hover .dropdown_menu ul li {
+    width: 150px;
+    padding: 10px;
+}
+
+.fas {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--color-white);
+    pointer-events: none;
+}
+
+.dropdown_menu ul li:hover .dropdown_menu-1 {
+    display: block;
+}
+
+.dropdown_menu ul li:hover .dropdown_menu-1 {
+    display: block; /* Mostra o submenu ao passar o mouse */
+}
+
+.dropdown_menu-1 {
+    display: none; /* Oculta o submenu inicialmente */
+    position: absolute; /* Permite o posicionamento fora do fluxo padrão */
+    top: 0; /* Alinha verticalmente ao elemento pai */
+    left: 150px; /* Posiciona à direita do item pai */
+    background-color: rgb(0, 0, 0); /* Mantém o estilo existente */
+    z-index: 1000; /* Garante que o submenu seja exibido sobre outros elementos */
+}
+
+.dropdown_menu ul li {
+    position: relative; /* Necessário para o posicionamento correto dos submenus */
+}
+
+.dropdown_menu-1 ul li a {
+    font-size: 18px; /* Mantém o tamanho consistente com os outros itens */
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+    display: flex; /* Utiliza flexbox para alinhamento */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 10px; /* Espaçamento proporcional ao redor do texto */
+}
+
+.dropdown_menu-1 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    background-color: rgb(0, 0, 0);
+    z-index: 1000;
+    padding: 10px;
+    width: 200px;
+}
+
+.dropdown_menu ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dropdown_menu-1 {
+    display: none; /* Oculta o submenu inicialmente */
+    position: absolute; /* Alinha fora do fluxo padrão */
+    top: 0; /* Alinha ao topo do item pai */
+    left: 100%; /* Posiciona à direita do item pai */
+    background-color: rgb(0, 0, 0);
+    z-index: 1000; /* Mantém o submenu acima de outros elementos */
+    padding: 10px;
+    width: 200px; /* Define a largura */
+}
+
+.dropdown_menu ul li:hover > .dropdown_menu-1 {
+    display: block; /* Exibe o submenu secundário ao passar o mouse */
+}
+
+footer {
+    background-color: #0c1014;
+    color: #fff;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    width: 100%;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+    width: 30%;
+}
+
+.footer-distributed h3 {
+    color: #ffff;
+    font: normal 36px 'cookie', cursive;
+    margin: 0;
+}
+
+.footer-distributed h3 span {
+    color: #3fdd81;
+}
+
+.footer-distributed .footer-links {
+    color: #ffff;
+    margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #ffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: black;
+    color: #ffff;
+    font-size: 17px; /* Ajusta o tamanho para ser igual ao do email */
+    width: 38px; /* Mantém a largura consistente */
+    height: 38px; /* Mantém a altura consistente */
+    border-radius: 50%; /* Borda arredondada */
+    text-align: center;
+    line-height: 38px; /* Centraliza verticalmente o ícone */
+    margin: 10px 15px; /* Espaçamento entre os ícones */
+    vertical-align: middle; /* Alinhamento com o texto */
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-distributed .footer-right {
+    width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #ffff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a:hover {
+    background-color: #82049b;
+}
+
+.footer-links a:hover {
+    color: #82049b;
+}
+
+@media (max-width: 880px) {
+    .footer-distributed .footer-links,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+}
+
+<!--------------------------------CHATBOT--------------------------------------------->
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background: #ffffff;
+}
+.chatbot-toggler{
+    position: fixed;
+    right: 40px;
+    bottom: 80px;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+.show-chatbot .chatbot-toggler{
+    transform: rotate(90deg);
+}
+.chatbot-toggler span{
+    position: absolute;
+}
+.show-chatbot .chatbot-toggler span:first-child,
+.chatbot-toggler span:last-child{
+    opacity: 0;
+}
+.show-chatbot .chatbot-toggler span:last-child{
+    opacity: 1;
+}
+.chatbot{
+    position: fixed;
+    right: 40px;
+    bottom: 140px;
+    width: 420px;
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+    transform-origin: bottom right;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+    transition: all 0.1s ease;
+}
+.show-chatbot .chatbot{
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+.chatbot header{
+    background: rgb(0, 0, 0);
+    padding: 16px 0;
+    text-align: center;
+    position: relative;
+}
+.chatbot header h2{
+    color: #fff;
+    font-size: 1.4rem;
+}
+.chatbot header span{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    transform: translateY(-50%);
+}
+.chatbot .chatbox {
+    height: 320px; /*/////////////////////////////*/
+    overflow-y: auto;
+    padding: 30px 20px 100px;
+}
+.chatbox .chat{
+    display: flex;
+}
+.chatbox .incoming span{
+    height: 32px;
+    width: 32px;
+    color: #fff;
+    align-self: flex-end;
+    background: rgb(0, 0, 0);
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    margin: 0 10px 7px 0;
+}
+.chatbox .outgoing{
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+.chatbox .chat p{
+    color: #fff;
+    max-width: 75%;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 10px;
+    background: rgb(0, 0, 0);
+}
+.chatbox .chat p.error{
+    color: #721c24;
+    background: #f8d7da;
+}
+.chatbox .incoming p{
+    color: #000;
+    background: #f2f2f2;
+    border-radius: 10px 10px 10px 0;
+}
+.chatbot .chat-input{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    background: #fff;
+    padding: 5px 20px;
+    border-top: 1px solid #ccc;
+}
+.chat-input textarea{
+    height: 55px;
+    width: 100%;
+    border: none;
+    outline: none;
+    max-height: 180px;
+    font-size: 0.95rem;
+    resize: none;
+    padding: 16px 15px 16px 0;
+}
+.chat-input span {
+    align-self: flex-end;
+    height: 55px;
+    line-height: 55px;
+    color: rgb(26, 155, 126);
+    font-size: 1.35rem;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.chat-input textarea:valid ~ span{
+    visibility: visible;
+}
+
+@media(max-width: 490px){
+    .chatbox{
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .chatbox .chatbox{
+        height: 90%;
+    }
+    .chatbot header span{
+        display: block;
+    }
+}

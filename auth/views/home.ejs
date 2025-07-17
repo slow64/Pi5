@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" href="LogoFormat.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="chatbot.js" defer></script>
+    <title>Format Bot</title>
+</head>
+<body>
+    <%- include('./partials/navbar'); %>
+
+    <!--------------------------------CHATBOT--------------------------------------------->
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined">mode_comment</span>
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="chatbot">
+            <header>
+                <h2>Formatbot</h2>
+                <span class="material-symbols-outlined">close</span>
+            </header>
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    <p>Olá, eu sou o Formatbot, como posso te ajudar hoje? 😊</p>
+                </li> 
+            </ul>
+            <div class="chat-input">
+                <textarea placeholder="Digite uma mensagem" required></textarea>
+                <span id="send-btn" class="material-symbols-outlined">send</span>
+            </div>
+        </div>
+
+    <!--------------------------------FOOTER--------------------------------------------->
+
+    <%- include('./partials/footer'); %>
+</body>
+</html>
